@@ -1,12 +1,12 @@
 {
   "name": "astra-agent",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "engines": { "node": ">=22" },
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json --noEmit",
     "start": "node dist/server.js"
   },
   "dependencies": {
