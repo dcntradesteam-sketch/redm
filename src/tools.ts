@@ -11,10 +11,9 @@ export const supabase = createClient(url, key, {
 });
 
 export type AstraContext = { userId: string; conversationId?: string; projectId?: string };
-
 type AstraRunContext = RunContext<AstraContext>;
 
-export const listProjects = tool<AstraContext>({
+export const listProjects = tool({
   name: 'list_projects',
   description: 'List the current user’s Astra projects.',
   parameters: z.object({}),
@@ -25,7 +24,7 @@ export const listProjects = tool<AstraContext>({
   },
 });
 
-export const createProject = tool<AstraContext>({
+export const createProject = tool({
   name: 'create_project',
   description: 'Create a new Astra project for the current user.',
   parameters: z.object({ name: z.string().min(1).max(120), description: z.string().max(1000).optional() }),
@@ -36,7 +35,7 @@ export const createProject = tool<AstraContext>({
   },
 });
 
-export const saveMemory = tool<AstraContext>({
+export const saveMemory = tool({
   name: 'save_memory',
   description: 'Save a useful durable fact or preference for the current user. Do not store secrets.',
   parameters: z.object({ category: z.string().min(1).max(80), content: z.string().min(1).max(4000) }),
@@ -47,7 +46,7 @@ export const saveMemory = tool<AstraContext>({
   },
 });
 
-export const recallMemories = tool<AstraContext>({
+export const recallMemories = tool({
   name: 'recall_memories',
   description: 'Recall durable memories for the current user, optionally filtered by category.',
   parameters: z.object({ category: z.string().max(80).optional() }),
