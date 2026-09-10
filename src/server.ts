@@ -11,7 +11,7 @@ const port = Number(process.env.PORT ?? 8787);
 if (!process.env.OPENAI_API_KEY) throw new Error('OPENAI_API_KEY is required');
 
 app.get('/health', (_req, res) => {
-  res.json({ ok: true, service: 'astra-agent', version: '0.2.0' });
+  res.json({ ok: true, service: 'astra-agent', version: '0.2.1' });
 });
 
 app.post('/api/agent/run', async (req, res) => {
