@@ -1,7 +1,7 @@
 {
   "name": "astra-agent",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.2.0",
   "type": "module",
   "engines": { "node": ">=22" },
   "scripts": {
@@ -12,6 +12,7 @@
   "dependencies": {
     "@openai/agents": "latest",
     "@supabase/supabase-js": "latest",
+    "@vercel/node": "latest",
     "dotenv": "latest",
     "express": "latest",
     "zod": "^4.0.0"
