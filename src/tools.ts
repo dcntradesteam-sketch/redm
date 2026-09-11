@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { RunContext, tool } from '@openai/agents';
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { z } from 'zod';
