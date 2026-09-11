@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { run } from '@openai/agents';
-import { astra } from '../../src/agent.js';
-import { supabaseForUser } from '../../src/tools.js';
+import { astra } from '../../src/agent';
+import { supabaseForUser } from '../../src/tools';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'method_not_allowed' });
